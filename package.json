@@ -1,0 +1,79 @@
+{
+  "name": "md-pdf-md",
+  "version": "1.0.0",
+  "description": "Bidirectional Markdown-PDF converter with AI-powered vision. MD→PDF with beautiful themes, PDF→MD with LLaVA vision model - completely open source and privacy-first",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "md-pdf-md": "dist/cli.js",
+    "mdpdfmd": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "dev": "tsc --watch",
+    "test": "node dist/cli.js examples/README.md"
+  },
+  "keywords": [
+    "markdown",
+    "pdf",
+    "converter",
+    "bidirectional",
+    "pdf-to-markdown",
+    "markdown-to-pdf",
+    "llava",
+    "ollama",
+    "vision-ai",
+    "ai-powered",
+    "syntax-highlighting",
+    "documentation",
+    "cli",
+    "puppeteer",
+    "toc",
+    "beautiful",
+    "professional",
+    "open-source",
+    "privacy-first"
+  ],
+  "author": {
+    "name": "Harsh Joshi",
+    "url": "https://github.com/josharsh"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josharsh/md-pdf-md.git"
+  },
+  "bugs": {
+    "url": "https://github.com/josharsh/md-pdf-md/issues"
+  },
+  "homepage": "https://github.com/josharsh/md-pdf-md#readme",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^12.0.2",
+    "marked-gfm-heading-id": "^4.1.0",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^22.6.2",
+    "shiki": "^1.3.0",
+    "cli-progress": "^3.12.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "ollama": "^0.5.9",
+    "pdf2pic": "^3.1.3"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.11.5",
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}
