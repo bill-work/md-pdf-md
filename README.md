@@ -5,7 +5,12 @@
 Convert Markdown to beautiful PDFs **AND** extract Markdown from PDFs using local AI vision. Zero configuration, completely private, and open source.
 
 [![npm version](https://img.shields.io/npm/v/md-pdf-md.svg)](https://www.npmjs.com/package/md-pdf-md)
+[![npm downloads](https://img.shields.io/npm/dm/md-pdf-md.svg)](https://www.npmjs.com/package/md-pdf-md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/josharsh/md-pdf-md?style=social)](https://github.com/josharsh/md-pdf-md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Good First Issues](https://img.shields.io/github/issues/josharsh/md-pdf-md/good%20first%20issue?label=good%20first%20issues)](https://github.com/josharsh/md-pdf-md/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+[![Contributor Friendly](https://img.shields.io/badge/contributor-friendly-success)](CONTRIBUTING.md)
 
 ## ✨ Features
 
