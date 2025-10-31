@@ -130,23 +130,51 @@ export async function convertPdfToMarkdown(
       const prompt = createMarkdownExtractionPrompt(pageNum, pageImages.length);
 
       try {
+        if (options.debug) {
+          console.log(`Converting image data for page ${pageNum}...`);
+        }
+
         // Convert base64 to Uint8Array
         const imageBuffer = Buffer.from(imageBase64, 'base64');
         const imageUint8 = new Uint8Array(imageBuffer);
 
-        const response = await ollama.generate({
+        if (options.debug) {
+          console.log(`Calling Ollama API for page ${pageNum}...`);
+        }
+
+        // Use streaming for better responsiveness and progress feedback
+        const stream = await ollama.generate({
           model,
           prompt,
           images: [imageUint8],
-          stream: false,
+          stream: true,
           options: {
             temperature: 0.1, // Low temperature for more consistent output
             top_p: 0.9
           }
         });
 
+        // Collect the streamed response
+        let fullResponse = '';
+        let lastProgressUpdate = Date.now();
+
+        for await (const chunk of stream) {
+          fullResponse += chunk.response;
+
+          // Update progress every 2 seconds to show the API is responding
+          const now = Date.now();
+          if (options.debug && (now - lastProgressUpdate) > 2000) {
+            console.log(`  ...still processing page ${pageNum} (${fullResponse.length} chars received)...`);
+            lastProgressUpdate = now;
+          }
+        }
+
+        if (options.debug) {
+          console.log(`Received complete response from Ollama for page ${pageNum}`);
+        }
+
         // Extract and clean markdown
-        let pageMarkdown = response.response;
+        let pageMarkdown = fullResponse;
         pageMarkdown = cleanMarkdownOutput(pageMarkdown);
 
         markdownPages.push(pageMarkdown);
