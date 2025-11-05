@@ -1,6 +1,6 @@
 {
   "name": "md-pdf-md",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bidirectional Markdown-PDF converter with AI-powered vision. MD→PDF with beautiful themes, PDF→MD with LLaVA vision model - completely open source and privacy-first",
   "type": "module",
   "main": "dist/index.js",
