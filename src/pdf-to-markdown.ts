@@ -149,7 +149,7 @@ export async function convertPdfToMarkdown(
           images: [imageUint8],
           stream: true,
           options: {
-            temperature: 0.1, // Low temperature for more consistent output
+            temperature: 0.0, // Zero temperature for deterministic, exact extraction
             top_p: 0.9
           }
         });
@@ -220,42 +220,50 @@ export async function convertPdfToMarkdown(
  * Create optimized prompt for markdown extraction
  */
 function createMarkdownExtractionPrompt(pageNum: number, totalPages: number): string {
-  return `You are a document conversion expert. Convert this PDF page image to markdown format.
+  return `You are a precise document transcription tool. Your ONLY job is to extract and transcribe the EXACT text visible on this PDF page image into markdown format.
 
-IMPORTANT RULES:
-1. Preserve all structure: headings, paragraphs, lists, tables
-2. Use proper markdown heading levels: # for H1, ## for H2, ### for H3, etc.
-3. For code blocks: use \`\`\`language for syntax highlighting
-4. For tables: use proper markdown table format with | separators
-5. Preserve bullet points and numbered lists exactly
-6. Keep all text content - don't summarize or omit anything
-7. If you see images, describe them briefly in [Image: description] format
-8. DO NOT add explanations or commentary
-9. Output ONLY markdown - no preamble or postscript
+CRITICAL RULES - READ CAREFULLY:
+1. EXTRACT ONLY what you can SEE - do NOT add, infer, interpret, or elaborate on anything
+2. COPY text VERBATIM - do NOT paraphrase, summarize, or rewrite
+3. DO NOT add ANY explanations, commentary, context, or extra information
+4. DO NOT add research, definitions, or background information
+5. DO NOT describe what the document is about
+6. DO NOT add introductory or concluding statements
+7. If there are images/diagrams, just note [Image] - do NOT describe or explain them
+8. Output ONLY the markdown - no preamble, no postscript, no meta-commentary
 
-STRUCTURE DETECTION:
-- Identify if text is a heading (larger, bold) → use # heading syntax
-- Identify code blocks (monospace font, colored syntax) → use \`\`\`language blocks
-- Identify tables (grid structure) → use markdown tables
-- Identify lists (bullets or numbers) → use proper list syntax
+FORMATTING RULES:
+- Preserve headings: use # for large/bold headings, ## for subheadings, etc.
+- Preserve lists: use - for bullets, 1. 2. 3. for numbered lists
+- Preserve tables: use markdown table format with | separators
+- Preserve code blocks: use \`\`\` for code sections
+- Preserve text EXACTLY as it appears
 
 Page ${pageNum} of ${totalPages}.
 
-Convert this page to markdown now:`;
+Extract the visible text now:`;
 }
 
 /**
  * Clean and normalize markdown output
  */
 function cleanMarkdownOutput(markdown: string): string {
-  // Remove common AI artifacts
+  // Remove common AI artifacts and hallucinated content
   let cleaned = markdown
     // Remove "Here is the markdown:" type phrases
     .replace(/^(here is|here's|this is|the|okay,?\s*)?the\s+markdown.*?:?\s*\n+/gi, '')
+    // Remove AI meta-commentary about the document
+    .replace(/^(this|the)?\s*(document|page|text|content)\s+(appears to be|is about|contains|describes|shows).*?\n+/gmi, '')
+    // Remove introductory AI phrases
+    .replace(/^(i'll|i will|let me|i can see|based on).*?\n+/gmi, '')
+    // Remove concluding AI phrases
+    .replace(/\n+(that's all|that is all|hope this helps|let me know).*?$/gmi, '')
     // Remove markdown code blocks wrapping (```markdown ... ```)
     .replace(/^```markdown\s*\n/gi, '')
     .replace(/^```\s*\n/gi, '')
     .replace(/\n```\s*$/gi, '')
+    // Remove common research/definition introductions
+    .replace(/^(note:|important:|definition:|background:).*?\n+/gmi, '')
     // Normalize multiple blank lines to max 2
     .replace(/\n{4,}/g, '\n\n\n')
     // Trim start/end
